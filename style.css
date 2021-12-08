@@ -114,7 +114,7 @@
     fill: #f5f5f5;
 }
 
-/*---------------------*/
+/*-----------Responsive----------*/
 @media screen and (max-width:1280px) {
     body {
         flex-direction: column;
@@ -143,6 +143,43 @@
     }
 }
 
+@media screen and (max-width: 576px) {
+    .containerInfo #nameLabel input {
+        width: 100%;
+    }
+    
+    .containerInfo {
+        padding: 24px;
+    }
+
+    .containerInfo #birthDate #dateInput{
+        display: flex;
+    }
+
+    .containerInfo button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:370px) {
+    .containerResults {
+        height: 56px;
+    }
+
+    .containerResults p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .containerResults {
+        height: 48px;
+    }
+
+    .containerResults p {
+        font-size: 14px;
+    }
+}
 
 
 
