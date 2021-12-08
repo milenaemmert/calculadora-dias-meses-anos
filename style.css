@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;600&family=Roboto:wght@300;400;500&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    font-family: 'Readex Pro', 'Roboto', sans-serif;
+}
+
+.containerResults, .containerInfo {
+    width: 50%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 64px;
+    color: #f5f5f5;
+}
+
+.containerResults {
+    background-color:#8f9aac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerResults p {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.containerResults p span {
+    color: #1f394f;
+}
+
+.containerInfo { 
+    background-color:#1f394f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInfo #nameLabel, .containerInfo #birthDate, .containerInfo #birthHour {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: lowercase;
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+.containerInfo #nameLabel input {
+    margin-left: 12px;
+    border: none;
+    border-radius: 12px;
+    height: 48px;
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #1f394f;
+    outline: none; 
+}
+
+.containerInfo #birthDate input, .containerInfo #birthHour input {
+    width: 64px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 32px;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #1f394f;
+    outline: none; 
+}
+
+.containerInfo #birthDate :nth-child(3) {
+    width: 84px;
+}
+
+.containerInfo button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 12px;
+    height: 48px;
+    width: 50%;
+    background-color: #f5f5f5;
+    transition: 0.3s background-color, 0.3s color;
+    fill: #1f394f;
+    color: #1f394f;
+    font-family: 'Readex Pro', 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.containerInfo button svg {
+    transition: 0.3s fill;
+}
+
+.containerInfo button:hover {
+    background-color: #8f9aac;
+    cursor: pointer;
+    color: #f5f5f5;
+}
+
+.containerInfo button:hover svg {
+    fill: #f5f5f5;
+}
+
+/*---------------------*/
+@media screen and (max-width:1280px) {
+    body {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .containerResults, .containerInfo {
+        width: 100%;
+    }
+    
+    .containerResults {
+        height: 200px;
+    }
+
+    .containerResults p {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .containerInfo #nameLabel, .containerInfo #birthDate, .containerInfo #birthHour {
+        flex-direction: column;
+    }
+    .containerInfo .title {
+        margin-bottom: 16px;
+    }
+}
+
+
+
+
+

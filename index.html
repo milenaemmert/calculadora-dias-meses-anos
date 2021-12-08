@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sua idade em dias</title>
+</head>
+<body class="body">
+    <div class="containerResults">
+        <p>Informe os dados e veja quantos <span>anos, meses, dias, horas e minutos</span> você já viveu!</p>
+    </div>
+
+    <form action="#" class="containerInfo" >
+        <label id="nameLabel">
+            <div class="title">Nome:</div>
+            <input type="text" id="nameInput" required>
+        </label>
+        <label id="birthDate">
+            <div class="title">Data de nascimento:</div>
+            <div>
+                <input type="text" placeholder="dd" id="birthDay" maxlength="2" required>
+                /
+                <input type="text" placeholder="mm" id="birthMonth" maxlength="2" required>
+                /
+                <input type="text" placeholder="aaaa" id="birthYear" maxlength="4" required>
+            </div>
+        </label>
+        <label id="birthHour">
+            <div class="title">Hora do nascimento:</div>
+            <div>
+                <input type="text" placeholder="hh" id="hour" maxlength="2" required>
+                :
+                <input type="text" placeholder="mm" id="minutes" maxlength="2" required>
+            </div>
+        </label>
+        <button type="submit" id="button">
+            Ver resultados!<svg width="24" height="24" viewBox="0 0 24 24"><use href="#iconDoubleArrow"></use></svg>
+        </button>       
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
+<svg style="display: none;">
+    <defs>
+        <symbol id="iconDoubleArrow" viewBox="0 0 24 24">
+            <path d="M20.08 11.42L16.04 5.77C15.7 5.29 15.15 5 14.56 5C13.07 5 12.21 6.68 13.07 7.89L16 12L13.07 16.11C12.2 17.32 13.07 19 14.56 19C15.15 19 15.71 18.71 16.05 18.23L20.09 12.58C20.33 12.23 20.33 11.77 20.08 11.42Z"/>
+            <path d="M13.08 11.42L9.05004 5.77C8.70004 5.29 8.15004 5 7.56004 5C6.07004 5 5.20004 6.68 6.07004 7.89L9.00004 12L6.07004 16.11C5.20004 17.32 6.07004 19 7.56004 19C8.15004 19 8.71004 18.71 9.05004 18.23L13.09 12.58C13.33 12.23 13.33 11.77 13.08 11.42Z"/>
+        </symbol>
+    </defs>
+</svg>
