@@ -27,7 +27,7 @@ function calculate() {
 
     var millisecondsDifference = Math.abs(objDate.getTime() - systemDate.getTime())  
     var millisecondsDay = 24 * 60 * 60 * 1000
-    var livedDays = (Math.floor(millisecondsDifference / millisecondsDay) - 1)
+    var livedDays = Math.floor(millisecondsDifference / millisecondsDay)
 
     if (birthYearNumber % 4 == 0 || (birthYearNumber % 100 == 0 && birthYearNumber % 400 == 0)) {
         var millisecondsYear = 24 * 60 * 60 * 1000 * 366
