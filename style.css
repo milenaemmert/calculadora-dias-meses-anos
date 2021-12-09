@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;600&family=Roboto:wght@300;400;500&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;700&display=swap');
 
 * {
     margin: 0;
@@ -13,11 +13,12 @@
 .containerResults, .containerInfo {
     width: 50%;
     height: 100vh;
-    box-sizing: border-box;
     padding: 64px;
+    box-sizing: border-box;
     color: #f5f5f5;
 }
 
+/*.....Results Container.....*/
 .containerResults {
     background-color:#8f9aac;
     display: flex;
@@ -28,13 +29,14 @@
 .containerResults p {
     text-align: center;
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .containerResults p span {
     color: #1f394f;
 }
 
+/*.....Info Container.....*/
 .containerInfo { 
     background-color:#1f394f;
     display: flex;
@@ -58,7 +60,7 @@
     border: none;
     border-radius: 12px;
     height: 48px;
-    width: 50%;
+    width: 220px;
     font-size: 30px;
     text-align: center;
     background-color: #f5f5f5;
@@ -91,7 +93,7 @@
     border: none;
     border-radius: 12px;
     height: 48px;
-    width: 50%;
+    width: 220px;
     background-color: #f5f5f5;
     transition: 0.3s background-color, 0.3s color;
     fill: #1f394f;
@@ -114,7 +116,7 @@
     fill: #f5f5f5;
 }
 
-/*-----------Responsive----------*/
+/*.....Responsive.....*/
 @media screen and (max-width:1280px) {
     body {
         flex-direction: column;
@@ -126,7 +128,7 @@
     }
     
     .containerResults {
-        height: 200px;
+        height: 180px;
     }
 
     .containerResults p {
@@ -136,34 +138,26 @@
 
 @media screen and (max-width:630px) {
     .containerInfo #nameLabel, .containerInfo #birthDate, .containerInfo #birthHour {
-        flex-direction: column;
+        flex-direction: column;margin-bottom: 28px;
     }
     .containerInfo .title {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
 }
 
-@media screen and (max-width: 576px) {
-    .containerInfo #nameLabel input {
-        width: 100%;
-    }
-    
-    .containerInfo {
-        padding: 24px;
-    }
-
+@media screen and (max-width:460px) {
     .containerInfo #birthDate #dateInput{
         display: flex;
     }
-
-    .containerInfo button {
-        width: 100%;
+        
+    .containerInfo {
+        padding: 24px;
     }
 }
 
 @media screen and (max-width:370px) {
     .containerResults {
-        height: 56px;
+        height: 64px;
     }
 
     .containerResults p {
@@ -172,15 +166,11 @@
 }
 
 @media screen and (max-width:340px) {
-    .containerResults {
-        height: 48px;
-    }
-
     .containerResults p {
         font-size: 14px;
     }
+
+    .containerInfo {
+        padding: 20px;
+    }
 }
-
-
-
-
