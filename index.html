@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="pt_br">
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
     <title>Quanto tempo você já viveu</title>
-</head>
-<body class="body">
-    <div class="containerResults">
+  </head>
+  <body class="body">
+
+    <div class="container__results">
         <p>Informe os dados e veja quantos <span>anos, meses, dias, horas e minutos</span> você já viveu!</p>
     </div>
 
-    <form action="#" class="containerInfo" >
-        <label id="nameLabel">
-            <div class="title">Nome:</div>
-            <input type="text" id="nameInput" required>
+    <form class="container__info">
+        
+        <label id="nameLabel" class="form__label--config">
+            <div class="form__div-title">Nome:</div>
+            <input type="text" id="nameInput" class="input-name--config" required>
         </label>
-        <label id="birthDate">
-            <div class="title">Data de nascimento:</div>
-            <div id="dateInput">
-                <input type="text" placeholder="dd" id="birthDay" maxlength="2" required>
+
+        <label id="birthDate" class="form__label--config">
+            <div class="form__div-title">Data de nascimento:</div>
+            <div class="input-date--query">
+                <input type="text" placeholder="dd" id="birthDay" class="input-birth--config" maxlength="2" required>
                 /
-                <input type="text" placeholder="mm" id="birthMonth" maxlength="2" required>
+                <input type="text" placeholder="mm" id="birthMonth" class="input-birth--config" maxlength="2" required>
                 /
-                <input type="text" placeholder="aaaa" id="birthYear" maxlength="4" required>
+                <input type="text" placeholder="aaaa" id="birthYear" class="input-birth--config" maxlength="4" required>
             </div>
         </label>
-        <label id="birthHour">
-            <div class="title">Hora do nascimento:</div>
+        <label id="birthHour" class="form__label--config">
+            <div class="form__div-title">Hora do nascimento:</div>
             <div>
-                <input type="text" placeholder="hh" id="hour" maxlength="2" required>
+                <input type="text" placeholder="hh" id="hour" class="input-birth--config" maxlength="2" required>
                 :
-                <input type="text" placeholder="mm" id="minutes" maxlength="2" required>
+                <input type="text" placeholder="mm" id="minutes" class="input-birth--config" maxlength="2" required>
             </div>
         </label>
         <button type="submit" id="button">
@@ -40,8 +43,9 @@
         </button>       
     </form>
     <script src="assets/main.js"></script>
-</body>
+  </body>
 </html>
+
 <svg style="display: none;">
     <defs>
         <symbol id="iconDoubleArrow" viewBox="0 0 24 24">

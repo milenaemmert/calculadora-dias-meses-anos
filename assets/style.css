@@ -3,6 +3,8 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    box-sizing: border-box;
 }
 
 .body {
@@ -10,34 +12,33 @@
     font-family: 'Readex Pro', 'Roboto', sans-serif;
 }
 
-.containerResults, .containerInfo {
+.container__results, .container__info {
     width: 50%;
     height: 100vh;
     padding: 64px;
-    box-sizing: border-box;
     color: #f5f5f5;
 }
 
-/*.....Results Container.....*/
-.containerResults {
+/*.....Container => Results.....*/
+.container__results {
     background-color:#8f9aac;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.containerResults p {
+.container__results p {
     text-align: center;
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-.containerResults p span {
+.container__results p span {
     color: #1f394f;
 }
 
-/*.....Info Container.....*/
-.containerInfo { 
+/*.....Container => Info.....*/
+.container__info { 
     background-color:#1f394f;
     display: flex;
     flex-direction: column;
@@ -45,7 +46,7 @@
     align-items: center;
 }
 
-.containerInfo #nameLabel, .containerInfo #birthDate, .containerInfo #birthHour {
+.form__label--config {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -55,7 +56,7 @@
     font-size: 18px;
 }
 
-.containerInfo #nameLabel input {
+.input-name--config {
     margin-left: 12px;
     border: none;
     border-radius: 12px;
@@ -68,7 +69,7 @@
     outline: none; 
 }
 
-.containerInfo #birthDate input, .containerInfo #birthHour input {
+.input-birth--config {
     width: 64px;
     height: 48px;
     border: none;
@@ -82,11 +83,11 @@
     outline: none; 
 }
 
-.containerInfo #birthDate :nth-child(3) {
+.input-birth--config:nth-child(3) {
     width: 84px;
 }
 
-.containerInfo button {
+.container__info button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,17 +103,17 @@
     font-weight: 700;
 }
 
-.containerInfo button svg {
+.container__info button svg {
     transition: 0.3s fill;
 }
 
-.containerInfo button:hover {
+.container__info button:hover {
     background-color: #8f9aac;
     cursor: pointer;
     color: #f5f5f5;
 }
 
-.containerInfo button:hover svg {
+.container__info button:hover svg {
     fill: #f5f5f5;
 }
 
@@ -123,54 +124,54 @@
         height: 100vh;
     }
 
-    .containerResults, .containerInfo {
+    .container__results, .container__info {
         width: 100%;
     }
     
-    .containerResults {
+    .container__results {
         height: 180px;
     }
 
-    .containerResults p {
+    .container__results p {
         font-size: 24px;
     }
 }
 
 @media screen and (max-width:630px) {
-    .containerInfo #nameLabel, .containerInfo #birthDate, .containerInfo #birthHour {
+    .form__label--config {
         flex-direction: column;margin-bottom: 28px;
     }
-    .containerInfo .title {
+    .form__div-title {
         margin-bottom: 12px;
     }
 }
 
 @media screen and (max-width:460px) {
-    .containerInfo #birthDate #dateInput{
+    .input-date--query {
         display: flex;
     }
         
-    .containerInfo {
+    .container__info {
         padding: 24px;
     }
 }
 
 @media screen and (max-width:370px) {
-    .containerResults {
+    .container__results {
         height: 64px;
     }
 
-    .containerResults p {
+    .container__results p {
         font-size: 16px;
     }
 }
 
 @media screen and (max-width:340px) {
-    .containerResults p {
+    .container__results p {
         font-size: 14px;
     }
 
-    .containerInfo {
+    .container__info {
         padding: 20px;
     }
 }
