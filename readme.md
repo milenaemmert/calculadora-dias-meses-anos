@@ -1,6 +1,4 @@
 # Calculadora de tempo com JavaScript
-⚠ <em>Este projeto está em construção e sendo atualizado e melhorado dia após dia.</em><br><br>
-
 &rarr; Calcule quantos anos, meses, dias, horas e minutos você já viveu!<br><br>
 
 <strong>Tecnologias utilizadas<strong><br>
