@@ -6,83 +6,78 @@ var birthHour = document.querySelector('#hour')
 var birthMinutes = document.querySelector('#minutes')
 var textResult = document.querySelector('.containerResults p')
 
-var bodyReverse = document.querySelector('.body')
-
+const BUTTON = document.querySelector('#button') 
 var objDate = new Date()
 
-var form = document.querySelector('form')
-form.setAttribute('onsubmit', 'calculate(); return false')
+BUTTON.addEventListener('click', function () {
+    let nameValue = nameInput.value    
+    let birthDayNumber = parseInt(birthDay.value)
+    let birthMonthNumber = parseInt(birthMonth.value)
+    let birthYearNumber = parseInt(birthYear.value)
+    let birthHourNumber = parseInt(birthHour.value)
+    let birthMinutesNumber = parseInt(birthMinutes.value)
 
-function calculate() {
-    var nameValue = nameInput.value
-    //var nameFisrtLetter = nameValue.charAt(0).toUpperCase()
-    
-    var birthDayNumber = parseInt(birthDay.value)
-    var birthMonthNumber = parseInt(birthMonth.value)
-    var birthYearNumber = parseInt(birthYear.value)
-    var birthHourNumber = parseInt(birthHour.value)
-    var birthMinutesNumber = parseInt(birthMinutes.value)
+    let systemDate = new Date(birthYearNumber, (birthMonthNumber - 1), birthDayNumber, birthHourNumber, birthMinutesNumber)  
 
-    var systemDate = new Date(birthYearNumber, (birthMonthNumber - 1), birthDayNumber, birthHourNumber, birthMinutesNumber)  
-
-    var millisecondsDifference = Math.abs(objDate.getTime() - systemDate.getTime())  
-    var millisecondsDay = 24 * 60 * 60 * 1000
-    var livedDays = Math.floor(millisecondsDifference / millisecondsDay)
+    let millisecondsDifference = Math.abs(objDate.getTime() - systemDate.getTime())  
+    let millisecondsDay = 24 * 60 * 60 * 1000
+    let livedDays = Math.floor(millisecondsDifference / millisecondsDay)
 
     if (birthYearNumber % 4 == 0 || (birthYearNumber % 100 == 0 && birthYearNumber % 400 == 0)) {
-        var millisecondsYear = 24 * 60 * 60 * 1000 * 366
+        let millisecondsYear = 24 * 60 * 60 * 1000 * 366
     } else {
-        var millisecondsYear = 24 * 60 * 60 * 1000 * 365
+        let millisecondsYear = 24 * 60 * 60 * 1000 * 365
     }       
-    var livedYears = Math.floor(millisecondsDifference / millisecondsYear)
+    let livedYears = Math.floor(millisecondsDifference / millisecondsYear)
 
-    var livedMonths = livedYears * 12 // confirmar se esse calculo precisa ou não de arrendondamento
+    let livedMonths = livedYears * 12 // confirmar se esse calculo precisa ou não de arrendondamento
 
-    var millisecondsHour = 60 * 60 * 1000
-    var livedHours = Math.floor(millisecondsDifference / millisecondsHour)
+    let millisecondsHour = 60 * 60 * 1000
+    let livedHours = Math.floor(millisecondsDifference / millisecondsHour)
     
-    var millisecondsMinutes = 60 * 1000
-    var livedMinutes = Math.floor(millisecondsDifference / millisecondsMinutes)
+    let millisecondsMinutes = 60 * 1000
+    let livedMinutes = Math.floor(millisecondsDifference / millisecondsMinutes)
 
     //bodyReverse.style.flexDirection='row-reverse'
 
     textResult.innerHTML = (nameValue + ", você tem " + livedYears + " anos, já viveu " + livedDays + " dias, " + livedMonths + " meses, " + livedHours +" horas e " + livedMinutes + " minutos!")
-}
+})
 
+/* function calculate() {
+    
+} */
 
+/*.....Not allow numbers in name input*/
+nameInput.addEventListener('keypress', function(e) {
+    let keyCode = (e.keyCode ? e.keyCode : e.which)
+    if (keyCode > 47 && keyCode < 58) {
+        e.preventDefault()
+    }
+})
 
-
+/*.....Regex for only numbers.....*/
+/*!!!TRY TO REDUCE THIS CODE BELOW FOR THE NEXT VERSION!!!*/
 birthDay.addEventListener('input', function(){
-    var replaced = birthDay.value.replace(/\D+/g, '')
+    let replaced = birthDay.value.replace(/\D+/g, '')
     birthDay.value = replaced
 })
 
-//alert(Math.abs(objDate.getTime() - systemDate.getTime()))
+birthMonth.addEventListener('input', function(){
+    let replaced = birthMonth.value.replace(/\D+/g, '')
+    birthMonth.value = replaced
+})
 
-//converter para milissegundos
-    //alert(objDate.getTime())
-    //alert(systemDate.getTime())
+birthYear.addEventListener('input', function(){
+    let replaced = birthYear.value.replace(/\D+/g, '')
+    birthYear.value = replaced
+})
 
-//alert(typeof(birthYearNumber))
-    //window.alert(birthYearNumber)
-    //alert('Dia: ' + birthDayNumber)
-    //alert('Mês: ' + birthMonthNumber)
+birthHour.addEventListener('input', function(){
+    let replaced = birthHour.value.replace(/\D+/g, '')
+    birthHour.value = replaced
+})
 
-//alert(typeof(nameInput.value)) //- input name ok testado
-    //alert(birthDay.value)  //- birth day ok testado
-    //alert(typeof(birthMonth.value)) //- birth month ok testado retorna string
-    //alert(birthYear.value) //- birth year ok testado
-    //alert(birthHour. value + birthMinutes.value) - ok testado
-    //alert(typeof(birthDayNumber))// retornou number ok
-    //alert(typeof(birthMonthNumber))// retornou number ok
-    //alert(typeof(birthYearNumber))// retornou number ok
-    //alert(objDate);
-    //var userBirthDate = new Date
-
-//input de dinheiro
-/*nameInput.addEventListener('input', function(){
-    var replaced = nameInput.value.replace(/\D+/g, '')
-    nameInput.value = new Intl.NumberFormat('pt-br', {
-        style:'currency', currency:'BRL'}).format(replaced/100)
-})*/
-//minimumFractionDigits:2
+birthMinutes.addEventListener('input', function(){
+    let replaced = birthMinutes.value.replace(/\D+/g, '')
+    birthMinutes.value = replaced
+})
