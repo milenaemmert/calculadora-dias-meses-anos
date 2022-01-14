@@ -1,16 +1,21 @@
+/*.....Change result content variable.....*/
+var textResult = document.querySelector('.container__results p')
+
+/*.....Inputs variables.....*/
 var nameInput = document.querySelector('#nameInput')
 var birthDay = document.querySelector('#birthDay')
 var birthMonth = document.querySelector('#birthMonth')
 var birthYear = document.querySelector('#birthYear')
 var birthHour = document.querySelector('#hour')
 var birthMinutes = document.querySelector('#minutes')
-var textResult = document.querySelector('.containerResults p')
 
 const BUTTON = document.querySelector('#button') 
+
 var objDate = new Date()
 
-BUTTON.addEventListener('click', function () {
-    let nameValue = nameInput.value    
+BUTTON.addEventListener('click', function (e) {
+    e.preventDefault()
+    let nameValue = nameInput.value  
     let birthDayNumber = parseInt(birthDay.value)
     let birthMonthNumber = parseInt(birthMonth.value)
     let birthYearNumber = parseInt(birthYear.value)
@@ -19,35 +24,37 @@ BUTTON.addEventListener('click', function () {
 
     let systemDate = new Date(birthYearNumber, (birthMonthNumber - 1), birthDayNumber, birthHourNumber, birthMinutesNumber)  
 
-    let millisecondsDifference = Math.abs(objDate.getTime() - systemDate.getTime())  
+    /*.....Difference between current time and input time.....*/
+    let millisecondsDifference = Math.abs(objDate.getTime() - systemDate.getTime())
+    
+    /*.....Years.....*/
+    /*leap years*/
+    if (birthYearNumber % 4 == 0 || (birthYearNumber % 100 == 0 && birthYearNumber % 400 == 0)) {
+        var millisecondsYear = 24 * 60 * 60 * 1000 * 366
+    } else {
+        var millisecondsYear = 24 * 60 * 60 * 1000 * 365
+    } 
+    let livedYears = Math.floor(millisecondsDifference / millisecondsYear)
+
+    /*.....Months.....*/
+    let livedMonths = (livedYears * 12) + (12 - birthMonthNumber)
+
+    /*.....Days.....*/
     let millisecondsDay = 24 * 60 * 60 * 1000
     let livedDays = Math.floor(millisecondsDifference / millisecondsDay)
 
-    if (birthYearNumber % 4 == 0 || (birthYearNumber % 100 == 0 && birthYearNumber % 400 == 0)) {
-        let millisecondsYear = 24 * 60 * 60 * 1000 * 366
-    } else {
-        let millisecondsYear = 24 * 60 * 60 * 1000 * 365
-    }       
-    let livedYears = Math.floor(millisecondsDifference / millisecondsYear)
-
-    let livedMonths = livedYears * 12 // confirmar se esse calculo precisa ou não de arrendondamento
-
+    /*.....Hours.....*/
     let millisecondsHour = 60 * 60 * 1000
     let livedHours = Math.floor(millisecondsDifference / millisecondsHour)
     
+    /*.....Minutes.....*/
     let millisecondsMinutes = 60 * 1000
     let livedMinutes = Math.floor(millisecondsDifference / millisecondsMinutes)
-
-    //bodyReverse.style.flexDirection='row-reverse'
-
+   
     textResult.innerHTML = (nameValue + ", você tem " + livedYears + " anos, já viveu " + livedDays + " dias, " + livedMonths + " meses, " + livedHours +" horas e " + livedMinutes + " minutos!")
 })
 
-/* function calculate() {
-    
-} */
-
-/*.....Not allow numbers in name input*/
+/*.....Not allow numbers in name input.....*/
 nameInput.addEventListener('keypress', function(e) {
     let keyCode = (e.keyCode ? e.keyCode : e.which)
     if (keyCode > 47 && keyCode < 58) {
