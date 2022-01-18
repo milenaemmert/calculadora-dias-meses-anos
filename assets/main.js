@@ -63,28 +63,12 @@ nameInput.addEventListener('keypress', function(e) {
 })
 
 /*.....Regex for only numbers.....*/
-/*!!!TRY TO REDUCE THIS CODE BELOW FOR THE NEXT VERSION!!!*/
-birthDay.addEventListener('input', function(){
-    let replaced = birthDay.value.replace(/\D+/g, '')
-    birthDay.value = replaced
-})
 
-birthMonth.addEventListener('input', function(){
-    let replaced = birthMonth.value.replace(/\D+/g, '')
-    birthMonth.value = replaced
-})
+let arrayInputNumbers = [birthDay, birthMonth, birthYear, birthHour, birthMinutes]
 
-birthYear.addEventListener('input', function(){
-    let replaced = birthYear.value.replace(/\D+/g, '')
-    birthYear.value = replaced
-})
-
-birthHour.addEventListener('input', function(){
-    let replaced = birthHour.value.replace(/\D+/g, '')
-    birthHour.value = replaced
-})
-
-birthMinutes.addEventListener('input', function(){
-    let replaced = birthMinutes.value.replace(/\D+/g, '')
-    birthMinutes.value = replaced
+arrayInputNumbers.forEach((element) => {
+    element.addEventListener('input', () => {
+        let replaced = element.value.replace(/\D+/g, '')
+        element.value = replaced
+    })
 })
