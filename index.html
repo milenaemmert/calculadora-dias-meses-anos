@@ -1,62 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt_br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Quanto tempo você já viveu</title>
-  </head>
-  <body class="body">
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veja quanto tempo você já viveu!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div class="container__results">
-        <p>Informe os dados e veja quantos <span>anos, meses, dias, horas e minutos</span> você já viveu!</p>
-    </div>
+<body>
+  <div class="result__container">
+    <p class="result__text">Informe os dados e veja quantos <span class="result__text-highlight">anos, meses, dias, horas, minutos e segundos</span>você já viveu!
+    </p>
+  </div>
 
-    <form class="container__info">
-        
-        <label id="nameLabel" class="form__label--config">
-            <div class="form__div-title">Nome:</div>
-            <input type="text" id="nameInput" class="input-name--config" required>
-        </label>
+  <div class="form__container">
+    <form class="form">
+      <div class="input__container">
+        <label for="birthDate">data de nascimento:</label>
+        <input type="date" id="birthDate" required />
+      </div>
 
-        <label id="birthDate" class="form__label--config">
-            <div class="form__div-title">Data de nascimento:</div>
-            <div class="input-date--query">
-                <input type="text" placeholder="dd" id="birthDay" class="input-birth--config" maxlength="2" required>
-                /
-                <input type="text" placeholder="mm" id="birthMonth" class="input-birth--config" maxlength="2" required>
-                /
-                <input type="text" placeholder="aaaa" id="birthYear" class="input-birth--config" maxlength="4" required>
-            </div>
-        </label>
+      <div class="input__container">
+        <label for="birthTime">horário do nascimento:</label>
+        <input type="time" value="00:00" id="birthTime" />
+      </div>
 
-        <label id="birthHour" class="form__label--config">
-            <div class="form__div-title">Hora do nascimento:</div>
-            <div>
-                <input type="text" placeholder="hh" id="hour" class="input-birth--config" maxlength="2" required>
-                :
-                <input type="text" placeholder="mm" id="minutes" class="input-birth--config" maxlength="2" required>
-            </div>
-        </label>
-
-        <button type="submit" id="button">
-            Ver resultados!<svg width="24" height="24" viewBox="0 0 24 24"><use href="#iconDoubleArrow"></use></svg>
-        </button>       
+      <input type="submit" value="Ver resultados!" class="button" />
     </form>
-    <script src="assets/main.js"></script>
-  </body>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
-
-<svg style="display: none;">
-    <defs>
-        <symbol id="iconDoubleArrow" viewBox="0 0 24 24">
-            <path d="M20.08 11.42L16.04 5.77C15.7 5.29 15.15 5 14.56 5C13.07 5 12.21 6.68 13.07 7.89L16 12L13.07 16.11C12.2 17.32 13.07 19 14.56 19C15.15 19 15.71 18.71 16.05 18.23L20.09 12.58C20.33 12.23 20.33 11.77 20.08 11.42Z"/>
-            <path d="M13.08 11.42L9.05004 5.77C8.70004 5.29 8.15004 5 7.56004 5C6.07004 5 5.20004 6.68 6.07004 7.89L9.00004 12L6.07004 16.11C5.20004 17.32 6.07004 19 7.56004 19C8.15004 19 8.71004 18.71 9.05004 18.23L13.09 12.58C13.33 12.23 13.33 11.77 13.08 11.42Z"/>
-        </symbol>
-
-        <symbol id="iconLinkedin">
-            <path d="M0 120c0-33.334 11.667-60.834 35-82.5C58.333 15.833 88.667 5 126 5c36.667 0 66.333 10.666 89 32 23.333 22 35 50.666 35 86 0 32-11.333 58.666-34 80-23.333 22-54 33-92 33h-1c-36.667 0-66.333-11-89-33S0 153.333 0 120zm13 875V327h222v668H13zm345 0h222V622c0-23.334 2.667-41.334 8-54 9.333-22.667 23.5-41.834 42.5-57.5 19-15.667 42.833-23.5 71.5-23.5 74.667 0 112 50.333 112 151v357h222V612c0-98.667-23.333-173.5-70-224.5S857.667 311 781 311c-86 0-153 37-201 111v2h-1l1-2v-95H358c1.333 21.333 2 87.666 2 199 0 111.333-.667 267.666-2 469z"/>
-        </symbol>
-    </defs>
-</svg>

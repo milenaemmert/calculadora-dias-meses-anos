@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+  --pink: #EA569D;
+  --blue: #5956EA;
+  --white: #FAFAFA;
+
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+.result__container, .form__container {
+  width: 50%;
+  height: 100vh;
+  padding: 2rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result__container {
+  background-color: var(--pink);
+  font-size: 2rem;
+}
+
+.result__text {
+  width: 420px;
+}
+
+.form__container {
+  background-color: var(--blue);
+  font-size: 1rem;
+}
+
+.result__text-highlight {
+  color: var(--blue);
+}
+
+.form {
+  width: 420px;
+  border: 1px solid var(--white);
+  padding: 1rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.input__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+}
+
+.form input {
+  height: 3rem;
+  width: 100%;
+  border-radius: .5rem;
+  border: none;
+  padding: 1rem;
+}
+
+.button {
+  background-color: var(--pink);
+  color: var(--white);
+  cursor: pointer;
+}
