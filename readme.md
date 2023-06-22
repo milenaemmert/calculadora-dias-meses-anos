@@ -12,7 +12,7 @@ Esse foi um dos meus primeiros projetos que utilizei JavaScript. Comecei ele em 
   - Em dias
   - Em horas
   - Em minutos
-  - Em segundos, sendo atualizado continuamente a cada segundo
+  - Em segundos, sendo atualizado continuadamente a cada segundo
     
 ![Untitled](https://github.com/milenaemmert/dias-meses-anos-vividos/assets/87506547/f0668736-3e9d-48f6-b60c-ae0de4d2417e)
 
